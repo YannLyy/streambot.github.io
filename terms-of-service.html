@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conditions d'Utilisation — Watch2Gether</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0e11;
+      --surface:   #14161b;
+      --border:    #1f2229;
+      --accent:    #7c6dfa;
+      --accent2:   #a78bfa;
+      --text:      #e2e4ec;
+      --muted:     #7b7f93;
+      --divider:   #1a1c22;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 14, 17, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .logo-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .header-badge {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 72px 32px 48px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-meta strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ── Layout ── */
+    .layout {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 32px 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* ── Section ── */
+    .section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 19px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    ul li::before {
+      content: '›';
+      color: var(--accent);
+      font-size: 16px;
+      line-height: 1.4;
+      flex-shrink: 0;
+    }
+
+    /* ── Callout ── */
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+
+    .callout p {
+      font-size: 13.5px;
+      margin: 0;
+    }
+
+    /* ── Contact block ── */
+    .contact-block {
+      margin-top: 20px;
+      padding: 20px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .contact-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .contact-text span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      max-width: 100%;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header, .hero, .layout { padding-left: 20px; padding-right: 20px; }
+      .hero { padding-top: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">
+      <div class="logo-icon">🎬</div>
+      <span class="logo-name">Watch2Gether</span>
+    </a>
+    <span class="header-badge">Legal</span>
+  </header>
+
+  <div class="hero">
+    <div class="hero-eyebrow">Document légal</div>
+    <h1>Conditions <span>d'Utilisation</span></h1>
+    <p class="hero-meta">
+      Dernière mise à jour : <strong>11 juin 2025</strong> &nbsp;·&nbsp;
+      En utilisant Watch2Gether, vous acceptez ces conditions.
+    </p>
+  </div>
+
+  <div class="layout">
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <h2>Acceptation des conditions</h2>
+      </div>
+      <p>En ajoutant le bot Watch2Gether à votre serveur Discord ou en utilisant l'une de ses fonctionnalités, vous acceptez d'être lié par les présentes Conditions d'Utilisation. Si vous n'acceptez pas ces conditions, vous ne devez pas utiliser le service.</p>
+      <p>Ces conditions s'appliquent à tous les utilisateurs du bot, qu'ils soient administrateurs de serveur ou simples membres participant à une session de streaming.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <h2>Description du service</h2>
+      </div>
+      <p>Watch2Gether est un bot Discord permettant la création de sessions de visionnage collaboratif. Il offre les fonctionnalités suivantes :</p>
+      <ul>
+        <li>Création et gestion de sessions de streaming synchronisées</li>
+        <li>Lecture de vidéos YouTube et fichiers MP4 partagés</li>
+        <li>Authentification des utilisateurs via Discord OAuth2</li>
+        <li>Système de chat en temps réel pendant les sessions</li>
+        <li>Contrôle de volume individuel et global</li>
+        <li>Système de badges pour les participants actifs</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <h2>Conditions d'utilisation</h2>
+      </div>
+      <p>En utilisant Watch2Gether, vous vous engagez à :</p>
+      <ul>
+        <li>Respecter les <a href="https://discord.com/terms" style="color:var(--accent)">Conditions d'Utilisation de Discord</a> à tout moment</li>
+        <li>Ne pas diffuser de contenu illégal, protégé par des droits d'auteur sans autorisation, ou offensant</li>
+        <li>Ne pas tenter de contourner, désactiver ou interférer avec les mécanismes de sécurité du service</li>
+        <li>Ne pas utiliser le service à des fins commerciales sans autorisation explicite</li>
+        <li>Ne pas abuser des commandes de manière à perturber le fonctionnement du bot</li>
+        <li>Ne pas tenter d'accéder aux données d'autres utilisateurs ou serveurs</li>
+      </ul>
+      <div class="callout">
+        <p>Toute violation de ces conditions peut entraîner la suspension immédiate de l'accès au service, sans préavis.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <h2>Contenu et droits</h2>
+      </div>
+      <p>Watch2Gether est un outil de lecture et de synchronisation vidéo. Le service ne stocke, ne distribue ni n'héberge aucun contenu vidéo. Les utilisateurs sont seuls responsables des URLs qu'ils partagent pendant les sessions.</p>
+      <p>Vous garantissez disposer des droits nécessaires sur tout contenu partagé via le service, ou que le contenu partagé est librement accessible et ne viole pas les droits de tiers.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <h2>Disponibilité du service</h2>
+      </div>
+      <p>Watch2Gether est fourni "tel quel", sans garantie de disponibilité continue. Le service peut être temporairement indisponible pour cause de maintenance, de mises à jour ou de circonstances indépendantes de notre volonté.</p>
+      <p>Nous nous réservons le droit de modifier, suspendre ou interrompre tout ou partie du service à tout moment et sans préavis.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">06</div>
+        <h2>Limitation de responsabilité</h2>
+      </div>
+      <p>Dans les limites permises par la loi applicable, Watch2Gether et ses développeurs déclinent toute responsabilité pour :</p>
+      <ul>
+        <li>Les dommages directs ou indirects résultant de l'utilisation ou de l'impossibilité d'utiliser le service</li>
+        <li>La perte de données, de sessions ou d'informations de progression</li>
+        <li>Les actions ou contenus partagés par des tiers via le service</li>
+        <li>Les interruptions de service dues à des facteurs externes (Discord, hébergeur, réseau)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">07</div>
+        <h2>Modifications des conditions</h2>
+      </div>
+      <p>Nous nous réservons le droit de modifier ces Conditions d'Utilisation à tout moment. Les modifications entrent en vigueur dès leur publication. L'utilisation continue du service après publication des modifications constitue votre acceptation des nouvelles conditions.</p>
+      <p>Il vous appartient de consulter régulièrement cette page pour prendre connaissance des éventuelles modifications.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">08</div>
+        <h2>Droit applicable</h2>
+      </div>
+      <p>Ces Conditions d'Utilisation sont régies par le droit applicable dans la juridiction du développeur. Tout litige sera soumis à la compétence exclusive des tribunaux compétents.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">09</div>
+        <h2>Nous contacter</h2>
+      </div>
+      <p>Pour toute question relative aux présentes Conditions d'Utilisation, vous pouvez nous contacter via Discord.</p>
+      <div class="contact-block">
+        <div class="contact-icon">💬</div>
+        <div class="contact-text">
+          <strong>Support Watch2Gether</strong>
+          <span>Contactez le développeur via le serveur Discord officiel ou par message privé Discord.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Watch2Gether — Tous droits réservés.</p>
+    <p><a href="privacy-policy.html">Politique de Confidentialité</a></p>
+  </footer>
+
+</body>
+</html>

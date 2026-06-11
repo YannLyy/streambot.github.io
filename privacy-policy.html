@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de Confidentialité — Watch2Gether</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0e11;
+      --surface:   #14161b;
+      --border:    #1f2229;
+      --accent:    #7c6dfa;
+      --accent2:   #a78bfa;
+      --text:      #e2e4ec;
+      --muted:     #7b7f93;
+      --divider:   #1a1c22;
+      --green:     #34d399;
+      --yellow:    #fbbf24;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 14, 17, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .logo-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .header-badge {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      padding: 72px 32px 48px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-meta strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ── Summary cards ── */
+    .summary-grid {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 32px 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .summary-card .card-icon {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .summary-card .card-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .summary-card .card-value {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .layout {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 32px 100px;
+    }
+
+    .section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 19px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    ul li::before {
+      content: '›';
+      color: var(--accent);
+      font-size: 16px;
+      line-height: 1.4;
+      flex-shrink: 0;
+    }
+
+    /* ── Data table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 13.5px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .data-table td:first-child {
+      color: var(--text);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .data-table tr:hover td {
+      background: rgba(124, 109, 250, 0.04);
+    }
+
+    /* ── Pill badge ── */
+    .pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    .pill-green {
+      background: rgba(52, 211, 153, 0.12);
+      color: var(--green);
+    }
+
+    .pill-yellow {
+      background: rgba(251, 191, 36, 0.12);
+      color: var(--yellow);
+    }
+
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+
+    .callout p { font-size: 13.5px; margin: 0; }
+
+    .contact-block {
+      margin-top: 20px;
+      padding: 20px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .contact-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .contact-text span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer p { font-size: 12px; color: var(--muted); margin: 0; }
+
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      header, .hero, .layout, .summary-grid { padding-left: 20px; padding-right: 20px; }
+      .hero { padding-top: 48px; }
+      .summary-grid { grid-template-columns: 1fr; }
+      .data-table { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">
+      <div class="logo-icon">🎬</div>
+      <span class="logo-name">Watch2Gether</span>
+    </a>
+    <span class="header-badge">Legal</span>
+  </header>
+
+  <div class="hero">
+    <div class="hero-eyebrow">Document légal</div>
+    <h1>Politique de <span>Confidentialité</span></h1>
+    <p class="hero-meta">
+      Dernière mise à jour : <strong>11 juin 2025</strong> &nbsp;·&nbsp;
+      Transparence totale sur les données collectées et leur utilisation.
+    </p>
+  </div>
+
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="card-icon">🔐</div>
+      <div class="card-label">Données sensibles</div>
+      <div class="card-value">Aucun mot de passe stocké</div>
+    </div>
+    <div class="summary-card">
+      <div class="card-icon">⏱️</div>
+      <div class="card-label">Rétention</div>
+      <div class="card-value">Données de session uniquement</div>
+    </div>
+    <div class="summary-card">
+      <div class="card-icon">🚫</div>
+      <div class="card-label">Vente de données</div>
+      <div class="card-value">Jamais — aucun tiers</div>
+    </div>
+  </div>
+
+  <div class="layout">
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <h2>Introduction</h2>
+      </div>
+      <p>Watch2Gether ("le service", "le bot") s'engage à protéger la vie privée de ses utilisateurs. Cette politique explique quelles données sont collectées, pourquoi elles le sont, et comment elles sont utilisées lorsque vous interagissez avec le bot Discord ou la plateforme web associée.</p>
+      <p>En utilisant Watch2Gether, vous acceptez les pratiques décrites dans cette politique.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">02</div>
+        <h2>Données collectées</h2>
+      </div>
+      <p>Watch2Gether collecte uniquement les données strictement nécessaires au fonctionnement du service :</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Donnée</th>
+            <th>Source</th>
+            <th>Usage</th>
+            <th>Durée</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ID Discord</td>
+            <td>Discord OAuth2</td>
+            <td>Identification dans les sessions</td>
+            <td><span class="pill pill-yellow">Session active</span></td>
+          </tr>
+          <tr>
+            <td>Nom d'utilisateur Discord</td>
+            <td>Discord OAuth2</td>
+            <td>Affichage dans l'interface</td>
+            <td><span class="pill pill-yellow">Session active</span></td>
+          </tr>
+          <tr>
+            <td>Avatar Discord</td>
+            <td>Discord OAuth2</td>
+            <td>Affichage dans le chat</td>
+            <td><span class="pill pill-yellow">Session active</span></td>
+          </tr>
+          <tr>
+            <td>Token JWT</td>
+            <td>Généré par le service</td>
+            <td>Authentification sécurisée</td>
+            <td><span class="pill pill-yellow">24 heures</span></td>
+          </tr>
+          <tr>
+            <td>Badges obtenus</td>
+            <td>Activité dans le service</td>
+            <td>Système de récompenses</td>
+            <td><span class="pill pill-green">Persistant</span></td>
+          </tr>
+          <tr>
+            <td>Historique de session</td>
+            <td>Participation aux sessions</td>
+            <td>Timeline de visionnage</td>
+            <td><span class="pill pill-yellow">Temporaire</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <p>Watch2Gether ne collecte jamais de mots de passe, d'emails, d'informations de paiement ou de données de localisation.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">03</div>
+        <h2>Comment nous utilisons vos données</h2>
+      </div>
+      <p>Les données collectées sont utilisées exclusivement pour :</p>
+      <ul>
+        <li>Vous identifier au sein d'une session de streaming collaborative</li>
+        <li>Maintenir votre authentification pendant la durée de la session (via cookie JWT, 24h)</li>
+        <li>Afficher votre nom et avatar dans le chat en temps réel</li>
+        <li>Synchroniser le contrôle de lecture entre les participants</li>
+        <li>Attribuer et afficher les badges liés à votre participation</li>
+        <li>Permettre la reprise de session pour les utilisateurs récents</li>
+      </ul>
+      <p>Aucune donnée n'est utilisée à des fins publicitaires, analytiques externalisées ou de profilage comportemental.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">04</div>
+        <h2>Authentification Discord OAuth2</h2>
+      </div>
+      <p>Watch2Gether utilise Discord OAuth2 avec le scope <code style="font-family:monospace;background:var(--surface);padding:2px 6px;border-radius:4px;font-size:13px;color:var(--accent2)">identify</code> uniquement. Cela signifie que le service :</p>
+      <ul>
+        <li><strong style="color:var(--text)">Peut lire</strong> : votre ID Discord, votre nom d'utilisateur et votre avatar</li>
+        <li><strong style="color:var(--text)">Ne peut pas accéder</strong> : à vos serveurs, vos messages, vos amis, vos emails ou tout autre donnée Discord</li>
+        <li><strong style="color:var(--text)">Ne stocke pas</strong> : votre token d'accès Discord — celui-ci est échangé immédiatement contre un JWT interne et n'est jamais conservé</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">05</div>
+        <h2>Stockage et sécurité</h2>
+      </div>
+      <p>Les données de session sont stockées en mémoire (RAM) sur le serveur et ne survivent pas à un redémarrage du service. Seules les données de badges sont persistées dans un fichier local sur le serveur hébergeant le bot.</p>
+      <ul>
+        <li>Les tokens JWT sont signés avec une clé secrète et ont une durée de vie de 24 heures</li>
+        <li>Les cookies d'authentification sont transmis via HTTPS uniquement</li>
+        <li>Aucune base de données externe n'est utilisée pour stocker des données personnelles</li>
+        <li>L'accès aux routes protégées nécessite un token valide à chaque requête</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">06</div>
+        <h2>Partage avec des tiers</h2>
+      </div>
+      <p>Watch2Gether ne vend, ne loue et ne partage jamais vos données personnelles avec des tiers à des fins commerciales.</p>
+      <p>Le service interagit avec les services tiers suivants dans le cadre normal de son fonctionnement :</p>
+      <ul>
+        <li><strong style="color:var(--text)">Discord API</strong> — pour l'authentification OAuth2 et les commandes slash</li>
+        <li><strong style="color:var(--text)">YouTube</strong> — pour la lecture des vidéos partagées (côté client uniquement, via le lecteur intégré)</li>
+        <li><strong style="color:var(--text)">Cloudflare Tunnel</strong> — pour l'exposition sécurisée du serveur web (aucune donnée stockée par Cloudflare au-delà du transit)</li>
+      </ul>
+      <p>Ces services sont soumis à leurs propres politiques de confidentialité.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">07</div>
+        <h2>Conservation des données</h2>
+      </div>
+      <p>Conformément au principe de minimisation des données :</p>
+      <ul>
+        <li>Les données de session (ID, nom, avatar, JWT) sont supprimées automatiquement à l'expiration de la session (inactivité de 4 heures ou déconnexion)</li>
+        <li>Les tokens JWT expirent après 24 heures et ne sont pas renouvelables automatiquement</li>
+        <li>Les données de badges sont conservées de manière persistante tant que le service est actif, afin de préserver votre historique de participation</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">08</div>
+        <h2>Vos droits</h2>
+      </div>
+      <p>Vous disposez des droits suivants concernant vos données personnelles :</p>
+      <ul>
+        <li><strong style="color:var(--text)">Droit d'accès</strong> : vous pouvez demander quelles données vous concernant sont traitées</li>
+        <li><strong style="color:var(--text)">Droit de suppression</strong> : vous pouvez demander la suppression de vos données (badges inclus)</li>
+        <li><strong style="color:var(--text)">Droit de rectification</strong> : si des données incorrectes vous concernent, vous pouvez en demander la correction</li>
+        <li><strong style="color:var(--text)">Droit d'opposition</strong> : vous pouvez cesser d'utiliser le service à tout moment pour mettre fin au traitement</li>
+      </ul>
+      <p>Pour exercer ces droits, contactez-nous via les coordonnées ci-dessous.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">09</div>
+        <h2>Modifications de cette politique</h2>
+      </div>
+      <p>Nous nous réservons le droit de modifier cette Politique de Confidentialité à tout moment. En cas de modification substantielle, la date de mise à jour en haut de cette page sera actualisée. L'utilisation continue du service vaut acceptation des modifications.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">10</div>
+        <h2>Nous contacter</h2>
+      </div>
+      <p>Pour toute question, demande d'accès ou de suppression de données, vous pouvez nous contacter directement via Discord.</p>
+      <div class="contact-block">
+        <div class="contact-icon">💬</div>
+        <div class="contact-text">
+          <strong>Support Watch2Gether</strong>
+          <span>Contactez le développeur via le serveur Discord officiel ou par message privé Discord.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Watch2Gether — Tous droits réservés.</p>
+    <p><a href="terms-of-service.html">Conditions d'Utilisation</a></p>
+  </footer>
+
+</body>
+</html>
